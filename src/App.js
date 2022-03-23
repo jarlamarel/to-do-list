@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+
+import React,{useState}  from 'react';
 import './App.css';
 
+
 function App() {
+ const [input,setInput]=useState("");
+ const [list,setList]=useState([]);
+ 
+ 
+ const  inputEventHandler=(e)=> {
+    setInput(e.target.value);
+
+  }
+ const listShowEvent=()=>
+ {
+   setList((prevVal)=>{
+    return [input,...prevVal]
+   
+   }) 
+   setInput("")
+    
+ }
+   const deleteItems=(id)=> {
+     setList((prevVal)=>{
+      
+      return prevVal.filter((item,index)=>{
+
+return index!==id;  } )  })}    
+      
+     
+    
+   
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+       <div className='box'>
+         <br></br>
+         <h1>ToDoList</h1>
+         <input type="text" placeholder='add an items' onChange={inputEventHandler} value={input}/>
+         <button onClick={listShowEvent}></button>
+         </div>
+        { list.map((item,index)=>{
+           return <div className='result'><button onClick={()=>deleteItems(index)}></button><p>{item}</p></div>
+         })}
+
+        </div>
+    
+  )
 }
+
 
 export default App;

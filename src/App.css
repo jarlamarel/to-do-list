@@ -1,12 +1,66 @@
 .App {
   text-align: center;
+  background-color: rgb(34, 34,48);
+  height: 800px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.box{
+background-color: rgb(55, 61,77);
+box-shadow: 0px,0px,7px;
+width: 500px;
+margin: auto;
+border-radius: 10px;
+color: white;
+margin-bottom: 2rem;
 
+}
+.box input{
+  padding: 1rem;
+  background-color: white;
+  border-radius: 5px;
+  color: blue;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+
+}
+.box button{
+  background-color: blue;
+  border-radius: 5px;
+  padding: 0.9rem;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0px 0px 5px blue;
+
+}
+.result {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+  padding: 0.2rem;
+  border-radius: 7px;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 1rem;
+  color: white;
+  box-shadow: 0px 0px 5px blue;
+}
+.result p{
+  margin: auto;
+
+}
+.result button{
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  border: none ;
+  outline: none;
+  color: black;
+  font-size: 15px;
+  box-shadow: 0px 0px 5px blue;
+  
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
